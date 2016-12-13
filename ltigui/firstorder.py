@@ -53,7 +53,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
          self.canvas.draw()
          self.toolbar
          if self.navTools.isChecked():
-             
+             self.verticalLayout.addWidget(self.toolbar)
          else:
              self.verticalLayout.removeWidget(self.toolbar)
          print(self.navTools.isChecked())

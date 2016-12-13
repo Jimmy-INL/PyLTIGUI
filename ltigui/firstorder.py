@@ -4,15 +4,17 @@ from PyQt5.uic import loadUiType
 from PyQt5 import QtCore, QtWidgets
 import sys
 
-import numpy as np
+
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigationToolbar)
+    
+import os
+uipath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"ui")
 
 Ui_MainWindow, QMainWindow = loadUiType('firstorder.ui')
-#from window2 import Ui_MainWindow
 
 from scipy import signal
 
@@ -33,7 +35,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.plotButton.clicked.connect(self.makeplot)
         
     def makeplot(self):
-         print("Hello World")
          K = self.gain.value()
          tau = self.tau.value()
 

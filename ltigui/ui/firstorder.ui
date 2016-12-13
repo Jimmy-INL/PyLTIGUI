@@ -155,7 +155,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QCheckBox" name="plotNav">
+        <widget class="QCheckBox" name="navTools">
          <property name="statusTip">
           <string>Enable the Plot Navigation Tools</string>
          </property>
@@ -214,13 +214,6 @@
      </item>
     </layout>
    </widget>
-   <zorder>widget</zorder>
-   <zorder>tau</zorder>
-   <zorder>gain</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>lineEdit_2</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
-   <zorder>horizontalSpacer</zorder>
   </widget>
  </widget>
  <resources/>

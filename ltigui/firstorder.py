@@ -14,7 +14,7 @@ from matplotlib.backends.backend_qt5agg import (
 import os
 uipath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"ui")
 
-Ui_MainWindow, QMainWindow = os.path.join(uipath,'firstorder.ui')
+Ui_MainWindow, QMainWindow = loadUiType(os.path.join(uipath,'firstorder.ui'))
 
 from scipy import signal
 

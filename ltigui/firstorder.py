@@ -22,6 +22,7 @@ class MainWindow2(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super(MainWindow2, self).__init__(parent)
         loadUiType(os.path.join(uipath,'firstorder.ui'), self)
+        self.setupUi(self)
 
 class MainWindow3(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
@@ -63,6 +64,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
-    main = MainWindow() 
+    main = MainWindow2() 
     main.show()
     sys.exit(app.exec_())

@@ -14,9 +14,16 @@ from matplotlib.backends.backend_qt5agg import (
 import os
 uipath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"ui")
 
-Ui_MainWindow, QMainWindow = loadUiType('firstorder.ui')
+Ui_MainWindow, QMainWindow = os.path.join(uipath,'firstorder.ui')
 
 from scipy import signal
+
+class MainWindow2(QtWidgets.QMainWindow):
+    def __init__(self, parent = None):
+        super(MainWindow, self).__init__(parent)
+        loadUiType(os.path.join(uipath,'firstorder.ui'), self)
+        
+        
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, ):
@@ -30,19 +37,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.verticalLayout.addWidget(self.canvas)
         
         self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
-        self.verticalLayout.addWidget(self.toolbar)
         
         self.plotButton.clicked.connect(self.makeplot)
         
     def makeplot(self):
+        self.stepplot()
+        
+    def stepplot(self):
          K = self.gain.value()
          tau = self.tau.value()
-
          sys = signal.TransferFunction([K],[tau,1])
          T, yout = signal.step(sys)
          self.ax.clear()
          self.ax.plot(T,yout)
          self.canvas.draw()
+         
+         print(self.navTools.checked)
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication

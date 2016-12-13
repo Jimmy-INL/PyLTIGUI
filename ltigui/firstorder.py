@@ -20,9 +20,14 @@ from scipy import signal
 
 class MainWindow2(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
-        super(MainWindow, self).__init__(parent)
+        super(MainWindow2, self).__init__(parent)
         loadUiType(os.path.join(uipath,'firstorder.ui'), self)
-        
+
+class MainWindow3(QtWidgets.QMainWindow):
+    def __init__(self, parent = None):
+        super(MainWindow3, self).__init__(parent)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
         
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -35,9 +40,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ax = self.fig.add_subplot(111)
         self.canvas = FigureCanvas(self.fig)
         self.verticalLayout.addWidget(self.canvas)
-        
-        self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
-        
+                
         self.plotButton.clicked.connect(self.makeplot)
         
     def makeplot(self):

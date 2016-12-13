@@ -52,7 +52,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
          self.ax.plot(T,yout)
          self.canvas.draw()
          
-         print(self.navTools.checked)
+         print(self.navTools.isChecked())
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication

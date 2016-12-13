@@ -51,7 +51,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
          self.ax.clear()
          self.ax.plot(T,yout)
          self.canvas.draw()
-         
+         self.toolbar
+         if self.navTools.isChecked():
+             
+         else:
+             self.verticalLayout.removeWidget(self.toolbar)
          print(self.navTools.isChecked())
         
 if __name__ == '__main__':
